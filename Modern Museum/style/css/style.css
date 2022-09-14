@@ -154,3 +154,11 @@ body {
     color:#FFFFFF;
     cursor:pointer;
   }
+
+  .forgotPassword{
+    color:#FFFFFF
+  }
+
+  .forgotPassword:hover{
+    color:#ffffff86
+  }
