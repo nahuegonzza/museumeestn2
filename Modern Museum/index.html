@@ -6,6 +6,7 @@
     <title>Museo</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible">
     <link rel="stylesheet" href="style/css/style.css">
+    <link rel="icon" href="style/img/favicon.png">
 </head>
 <body>
     <div class="container">
@@ -27,15 +28,17 @@
    
     <div class="container2"><br><br>
         <section class="form-register">
-            <h1>Solicitud de Turnos</h1>
-            <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
-            <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
-            <input class="controls" type="number" name="dni" id="dni" placeholder="Ingrese su DNI">
-            <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo Electronico">
-            <input class="controls" type="password" name="correo" id="correo" placeholder="Ingrese su Contraseña">
-            <br>
-            <input class="botons" type="submit" value="Registrar">
-          </section>
+            <form>
+                <h2 style="background: rgba(0, 0, 0, 0);">Solicitud de Turnos</h2>
+                <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+                <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
+                <input class="controls" type="number" name="dni" id="dni" min="0" max="99999999" placeholder="Ingrese su DNI">
+                <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo Electronico">
+                <input class="controls" type="password" name="correo" id="correo" placeholder="Ingrese su Contraseña">
+                <br>
+                <input class="buttons" type="submit" value="Registrar">
+            </form>
+        </section>
     </div>
 
     <footer class="footer">
