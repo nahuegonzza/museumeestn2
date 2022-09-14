@@ -1,1 +1,123 @@
-# museumeestn2
+#### ¡Hola! Este archivo es para el FrontEnd. El objetivo principal es inicialmente modificar los archivos ya existentes, para posteriormente basarnos en estas modificaciones para crear un esqueleto del cual basarnos para la realizacion del FrontEnd final.
+### _PD: ¡Recuerda comparar el archivo presente en el Git con el que tengas, quizá ya esté actualizado en esta plataforma!_
+# Control de Versiones
+ ------------------
+# ALPHA
+- 0.0
+  - Inicio del Proyecto. se retomaron todos los archivos del proyecto anterior, desde 0.
+- 0.1
+  - Lectura de los archivos y comparativa. Intento Fallido de modificar el style.css. Pruebas basicas para entendimiento del codigo.
+  - Acomodamiento del archivo "index.php", para mayor facilidad a la hora de modificar el Header, Main y Footer de la pagina.
+- 0.2
+  - Solucion de Errores relacionados con formulario.php y Percepcion1.php (Error al declarar los arrays).
+  - Comienzo de modificacion del index en base a lo ideado durante el Back-End.
+- 0.3 a 1.0
+  - Solucion de Masiva cantidad de Errores en varias partes del codigo (En todas las versiones).
+  - Pestaña de Reconocimientos ligeramente modificada.
+  - Division de los archivos en "includes", para evitar codigo redundante.
+  - Archivos pasaron TODOS de extension .html a extension .php.
+  - Mejoras al index. Imagenes aleatorias a la hora de reiniciar dicha pagina. 
+  - Autenticacion (Muy Simple y precaria) REALIZADA.
+  - Header: Minimamente Listo. Footer: En proceso.
+  - Separacion del Style.css a un Style.php. Utilizado inicialmente para las imagenes del banner central (Hero) del Index.
+  - Se dividio el codigo PHP del HTML, para mejor organizacion de la base. Insertados en carpeta "formsDB".
+  - Acomodamiento rapido del codigo, utilizando Formatter.
+  - Renombrado archivo de Datos Generales de "formulario.php" a "datos_generales.php".
+ ------------------
+ # BETA
+- 0.0.1
+  - Pestaña 1_Percepcion. FINALIZADA. 
+  - Lista de cosas agregadas a dicha pestaña:
+    - Agregadas letras Negritas a los titulos, para una separacion visual del contenido mucho mas bella.
+    - Agregada funcion "Comentario Otros", en todas las opciones "Otros" de los checkbox.
+    - Agregada funcion que permite abrir o cerrar pestañas, en caso de que concuerde o no con el paciente. (Originalmente, cerrada, y con la opcion "No" seleccionada).
+    - Arreglado problema con Labels, y agregado Labels a cada texto, para evitar selecciones.
+- 0.0.2
+  - Pestaña Datos Generales. PARCIALMENTE FINALIZADA.
+  - Agregadas 3 imagenes al index.
+  - Intento de modificacion del perfil dentro del header, y cambio al boton de cerrar sesion.
+  - Cambio de color provisional. Color original anterior (Violeta Claro: #6a5acd). Color nuevo de prueba (Verde Ab: #03bb85, Celeste Osc: #80bae0).
+- 0.0.3
+  - Modulos Datos Generales, 1_Percepcion y 2_Ejercicio. FINALIZADOS. Labels solucionados y conectados a sus For. Negrita colocada.
+  - Modulo 3_Nutricional. EN PROCESO.
+  - Agregado de variaciones en las frases dentro del Index.
+  - PROBLEMAS IMPORTANTES, ARCHIVOS MEZCLADOS. SOLUCIONADO.
+  - Comienzo de acomodamiento del codigo
+- 0.0.4
+  - Modulo 4 y 8 FINALIZADOS. Modulo 3, AUN EN PROCESO.
+  - En proceso de ordenamiento de archivos (Gran parte de los formularios ya ordenados).
+- 0.0.5 a 0.0.8
+  - Modulo 3, 5, 6, 9 y 11 FINALIZADOS.
+  - Comentarios.php FINALIZADO.
+  - Modulo 7 y 10 AUN EN PROCESO.
+- 0.0.9
+  - Verificacion de los Modulos realizada. Comparando con el archivo de Word.
+  - Modificado Modulo 2_actividad. Movida antecedentes de caidas. Sacado "En cama".
+  - Modificado Modulo 11_valores. Creada uno de los checkbox faltantes dentro del .docx.
+- 0.0.9.1
+  - Tras mostrar superficialmente el trabajo, varios problemas surgieron, y se les dio solucion.
+    -  Reemplazadas las imagenes por imagenes SIN COPYRIGHT.
+    -  Eliminada una de las frases controversiales, y agregado de otras similares para variedad.
+- 0.1
+  - Pagina subida a la pagina cuidadosenfermeros.ar (Acceso al editor mediante cuidadosenfermeros.ar:8880, Usuario: cuidados, Contraseña: BS5BLPGU).
+  - Formularios restantes: 7 FINALIZADO. 10 AUN EN PROCESO.
+  - Pagina de Busqueda parcialmente comenzada. Funcionamiento de tabla de pacientes.
+- 0.1.1
+  - Formulario 10, aun EN PROCESO.
+  - Cambio al login.php (Cambio de imagenes y agregado para iniciar la funcion de recuperar contraseña)
+  - Agregada funcion para retirar las terminaciones ".php" y ".html" de los links de la pagina.
+- 0.1.2
+  - Cambios al Footer: 
+    - Reacomodamiento y distribucion de botones y labels.
+    - Unica muestra del boton de "Colaboradores" en el Index.
+      - Dicha decisión se debe a la necesidad obligatoria de que el Footer ocupe gran tamaño en el Index, pero para permitir un Footer mas pequeño en el resto de paginas.
+  - Agregado Boton de "¿Haz olvidado tu contraseña?" en el Login (Aun sin funcion)
+  - Solucion de Error en el codigo: Includes de AssetsConnection repetidos 2 veces en cada codigo.
+- 0.1.3
+  - Agregada funcion en el index, para que siempre se mantenga en la pagina base, y no aparezca "/index" o "/paginexistente" al final del URL.
+  - Creadas 3 paginas, "cambiar_contraseña.php", "ingresar_codigo.php" y "ingresar_mail.php".
+    - Igualmente, es probable que no sean utilizadas, ya que con un Sweet Alert, puede quedar mejor, pero momentaneamente, existen.
+  - Subida de los archivos al GitHub, para uso en LocalHost.
+- 0.1.4
+  - Finalizado problema de tablas en Datos Generales.
+  - Modulo 10, aun EN PROCESO.
+  - Creacion del archivo "ingresar_modulo.php", el cual cumple el rol de direccionarte hacia cada formulario.
+  - Quitado del Header el DropDown que permitia seleccionar un formulario.
+  - Intento FALLIDO de trasladar los formularios a una carpeta aparte.
+- 0.2
+  - Cambio de la palabra "Paciente" a "Persona" o "Sujeto de Cuidado".
+  - Cambio a la pagina de Registro, ahora el año es mostrado en un Select, con las opciones de 1° a 4° año.
+    - Consultar si agregar una pestaña de "Docente".
+    - Tanto Names, ID's y Values son IDENTICOS, y tras verificacion, no genero problemas a la hora del registro.
+  - Necesidad de quitar la opcion de ocultar la pestaña de Reconocimientos en el Footer.
+    - Debido a Errores derivados con el redireccionamiento al Index.
+- 0.2.2
+  - Separacion de los Datos Generales del Motivo de Ingreso, en un modulo aparte.
+  - Agregado boton para direccionar a un nuevo motivo de ingreso al momento de seleccionar un paciente
+  - Arreglados problemas con footer y style en el Xampp.
+  - Intento fallido de mostrar nombre seleccionado en Buscar.
+- 0.2.3
+  - Solucion visual a 1_percepcion. Falta cambiar sus metodos de JavaScript (Posiblemente tambien al 2_actividad).
+  - Cambio a la pestaña de Observaciones. Alguien coloco el metodo como 12_comentarios, y fue incluido de dicha manera en los archivos, para evitar dicho archivo duplicado y darle un uso.
+- 0.2.5
+  - Cambio a 6_cognitivo. Intensidad, de un Select a un Range.
+  - Agregadas opciones de Si-No a 5_sueno y 9_adaptacion.
+  - 10_sexualidad AUN EN PROCESO.
+ ------------------
+ # Trabajo Restante:
+  - **COSAS FALTANTES:**
+  - Formularios:
+    - 1_percepcion. Agregar Opcion Si-No (Cambiar métodos de JavaScript). Posiblemente mismo caso para 2_actividad.
+    - 10_sexualidad (SIN TERMINAR, falta DE TODO).
+  - Mejora grafica a la pestaña "Buscar". 
+  - Agregado de la opcion de Verificar Registros.
+  - Acomodar el codigo para mayor fluidez de trabajo (Realizado, a futuro, se requerira nuevamente).
+  - Solucionar Errores propios o del trabajo anterior. SIEMPRE.
+ ------------------
+ # Control de Trabajo [FRONTEND]
+No me gusta hacer un control del trabajo, personalmente, ya que es un trabajo que vamos realizando quien puede sobre la marcha.
+  - Nahuel: Yo. Me encargo del ordenamiento, solucion de errores y codeo del programa casi en lo absoluto. Formularios Generales, 1, 2, 3, 4, 7, 8, 9, 10, 11 y Comentarios. Index, distintas funciones como imagenes y frases variadas. Header. Footer. Dsitribucion del codigo en carpetas como "Includes" para mayor fluidez, y un amplio solucionamiento de errores previos en el codigo (Labels o distintas etiquetas faltantes o sin cerrar, For no relacionados, etc...). Y finalmente, rol de direccionamiento del resto de miembros y sus distintos trabajos y funciones.
+  - Ariel: Se encarga del CSS, Ya estuvo haciendo pruebas y vamos todos viendo sus ideas para posteriormente implementarlas. Ademas, tiene el trabajo en proceso de implementar un Modo Oscuro a la pagina, por cuestiones visuales y de diseño.
+  - Dylan: (Ahora en BackEnd) Se encarga de aquellos trabajos menores que pueda dirigirle, desde trabajar con el Banner del Index hasta realizar actividades en los formularios.
+  - Gomez: Al igual que Dylan, se encarga de aquellos trabajos que le dirija. Actualmente, tiene el rol de ordenar el codigo de absolutamente todos los codigos, para un uso mas fluido de estos por parte del resto.
+  - Mateo: MIEMBRO DE BackEnd. Realizo los Modulos 5, 6 y 7, como forma de trabajar en el proyecto en el FrontEnd, hasta que tenga trabajo dentro del area de BackEnd.
