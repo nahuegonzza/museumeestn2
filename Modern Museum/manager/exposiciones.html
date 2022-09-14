@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../style/css/style.css">
     <link rel="stylesheet" href="../style/css/manager_style.css">
     <link rel="icon" href="../style/img/favicon.png">
+    <script src="functions.js"></script>
 </head>
 <body>
     <div class="container_manager">
@@ -20,12 +21,36 @@
                 <li><a href="#" style="color:#FFF"><b>Cerrar Sesion</b></a></li>
             </ul>
         </div>
-        <section class="form-manager">
+        <div class="form-manager" id="indexE_div" style="display:block">
+            <h1 style="font-size:36px;">Administrador de Exposiciones</h1>
+            <input type="button" class="buttons" id="newExposicion" name="newExposicion" value="Nueva Exposicion" onclick="newE()">
+            <input type="button" class="buttons" id="modifyExposicion" name="modifyExposicion" value="Modificar Exposicion" onclick="modifyE()">
+            <input type="button" class="buttons" id="moveExposicion" name="moveExposicion" value="Mover Exposicion" onclick="moveE()">
+            <input type="button" class="buttons" id="disableExposicion" name="disableExposicion" value="Deshabilitar/Habilitar Exposicion" onclick="disableE()">
+        </div>
+        <div class="form-manager" id="newE_div" style="display:none">
+            <h1 style="font-size:36px;">Nueva Exposicion</h1>
             <form>
-                <h1 style="font-size:36px;">Administrador de Exposiciones</h1>
-                
+                <input class="controls" type="text" name="exposicionTitle" id="exposicionTitle" placeholder="Titulo" required>
+                <input class="controls" type="text" name="exposicionDesc" id="exposicionDesc" placeholder="Descripcion" required>
+                <input class="controls" type="text" name="exposicionAutor" id="exposicionAutor" placeholder="Autor" required>
+                <!--select de sala-->aca un select de sala xd
+                <input class="buttons" type="submit" value="Crear">
             </form>
-        </section>
+            <input type="button" class="buttons"value="Volver" onclick="indexE()">
+        </div>
+        <div class="form-manager" id="modifyE_div" style="display:none">
+            <h1 style="font-size:36px;">Modificar Exposicion</h1>
+            <input type="button" class="buttons"value="Volver" onclick="indexE()">
+        </div>
+        <div class="form-manager" id="moveE_div" style="display:none">
+            <h1 style="font-size:36px;">Mover Exposicion</h1>
+            <input type="button" class="buttons"value="Volver" onclick="indexE()">
+        </div>
+        <div class="form-manager" id="disableE_div" style="display:none">
+            <h1 style="font-size:36px;">Deshabilitar/Habilitar Exposicion</h1>
+            <input type="button" class="buttons"value="Volver" onclick="indexE()">
+        </div>
     </div>
     <footer class="footer">
         <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>  
