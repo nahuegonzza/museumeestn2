@@ -22,7 +22,7 @@
         <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</h1>
         <table>
             <td>
-                <a href="style/img/mapa-museo.png"><img class="map" src="style/img/mapa-museo.png"></a>
+                <a href="map.html"><img class="map" src="style/img/mapa-museo.png"></a>
             </td>
             <td style="padding-top:3px;"> 
                 <h2>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</h2>
@@ -34,16 +34,31 @@
     </div>
    
     <div class="container2"><br><br>
-        <section class="form-register">
+        <section class="form-login">
             <form>
                 <h2>Solicitud de Turnos</h2>
-                <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
-                <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
-                <input class="controls" type="number" name="dni" id="dni" min="0" max="99999999" placeholder="Ingrese su DNI">
-                <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo Electronico">
-                <input class="controls" type="password" name="correo" id="correo" placeholder="Ingrese su Contraseña">
+                <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre" required>
+                <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido" required>
+                <input class="controls" type="text" name="dni" id="dni" placeholder="Introduzca su DNI" pattern="[0-9]{7,8}" title="Es necesario el 0 si su dni es inferior a 10.000.000" required>                
+                <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo Electronico" required>
+                <input class="controls" type="tel" name="tel" id="tel" placeholder="Ingrese su Numero de Telefono"  title="0223-XXXXXXX" pattern="[0-3]{3}[0-9]{1}[0-9]{6}" required>
+                <select class="controls selects" name="cant" id="cant" required>
+                    <option value="">Seleccione Cantidad de Personas</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+                <select class="controls selects" name="idioma" id="idioma" required>
+                    <option value="">Seleccione Idioma</option>
+                    <option value="1">Español</option>
+                    <option value="2">Ingles</option>
+                    <option value="3">Frances</option>
+                </select>
                 <br>
-                <input class="buttons" type="submit" value="Registrar">
+                <input class="buttons" type="submit" value="Solicitar Turno">
             </form>
         </section>
     </div>
