@@ -82,3 +82,23 @@ function indexV(){
     document.getElementById("modifyV_div").style="display:none";
     document.getElementById("disableV_div").style="display:none";
 }
+
+//Guias
+function newG(){
+    document.getElementById("indexG_div").style="display:none";
+    document.getElementById("newG_div").style="display:block";
+}
+function modifyG(){
+    document.getElementById("indexG_div").style="display:none";
+    document.getElementById("modifyG_div").style="display:block";
+}
+function deleteG(){
+    document.getElementById("indexG_div").style="display:none";
+    document.getElementById("deleteG_div").style="display:block";
+}
+function indexG(){
+    document.getElementById("indexG_div").style="display:block";
+    document.getElementById("newG_div").style="display:none";
+    document.getElementById("modifyG_div").style="display:none";
+    document.getElementById("deleteG_div").style="display:none";
+}
