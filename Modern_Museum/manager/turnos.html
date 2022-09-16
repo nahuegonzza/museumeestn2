@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Web - Turnos</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible">
+    <link rel="stylesheet" href="../style/css/style.css">
+    <link rel="icon" href="../style/img/favicon.png">
+    <script src="functions.js"></script>
+</head>
+<body>
+    <div class="container manager">
+        <div class="navbar">
+            <a href="../manager_index.html"><img src="../style/img/icono2.png" style="width: 100px;" class="logo" alt="Main Logo"></a>
+            <ul>
+                <li><a href="../login.html" style="color:#FFF; cursor:pointer"><b>Cerrar Sesion</b></a></li>
+            </ul>
+        </div>
+        <!-- Div Buttons-->
+        <div class="form manager" id="indexT_div" style="display:block">
+            <h1 style="font-size:36px;">Administrador de Turnos</h1>
+            <input type="button" class="buttons" id="newTurnos" name="newTurnos" value="Nuevo Turno" onclick="newT()">
+            <input type="button" class="buttons" id="modifyTurnos" name="modifyTurnos" value="Modificar Turnos" onclick="modifyT()">
+            <input type="button" class="buttons" id="cancelTurnos" name="cancelTurnos" value="Cancelar Turnos" onclick="cancelT()">
+            <a href="../manager_index.html"><input type="button" class="buttons dark" value="Volver"></a>
+        </div>
+        <!-- END Div Buttons-->
+        <div class="form manager" id="newT_div" style="display:none">
+            <h1 style="font-size:36px;">Nuevos Turnos</h1>
+            <form>
+                <input class="controls" type="date" name="TurnosTitle" id="TurnosTitle" placeholder="Fecha" required>
+                <input class="controls" type="time" name="TurnosDesc" id="TurnosDesc" placeholder="Descripcion" required>
+                <h7>(Select de Guias para seleccionar uno)</h7><br>
+                <h7>(Select de Visita Guiada para seleccionar una)</h7>
+                <input class="buttons" type="submit" value="Crear">
+            </form>
+            <input type="button" class="buttons dark"value="Volver" onclick="indexT()">
+        </div>
+        <div class="form manager" id="modifyT_div" style="display:none">
+            <h1 style="font-size:36px;">Modificar Turnos</h1>
+            <h7>(Lista de Turnos para seleccionar uno)</h7>
+            <input type="button" class="buttons dark"value="Volver" onclick="indexT()">
+        </div>
+        <div class="form manager" id="cancelT_div" style="display:none">
+            <h1 style="font-size:36px;">Cancelar Turnos</h1>
+            <h7>(Lista de Turnos para seleccionar uno o varios)</h7>
+            <input type="button" class="buttons dark"value="Volver" onclick="indexT()">
+        </div>
+    </div>
+    <footer class="footer">
+        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>  
+    </footer>
+</body>
+</html>

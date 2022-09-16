@@ -1,0 +1,256 @@
+body {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    color: #FFFFFF;
+}
+
+h7 {
+    color:red;
+    font-style: italic;
+    cursor:default;
+}
+
+/* ----------------- CONTAINERS ---------------------- */
+/* ----Regular---- */
+.container {
+    display:flex;
+    flex-direction: column;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 1) ), url(../img/bg-image.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-bottom: 100px;
+}
+
+.container h1,
+.container h2, 
+.container h3, 
+.container h4, 
+.container h5{
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 1%;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.3) ;
+    cursor:default;
+    border-radius: 4px;
+}
+/* ----Style2---- */
+.container.style2 {
+    margin-top: 10px;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1) ), url(../img/bg-image2.jpg);
+}
+
+.container.style2 h1,
+.container.style2 h2, 
+.container.style2 h3, 
+.container.style2 h4, 
+.container.style2 h5{
+    color: #FFFFFF;
+    background-color: rgba(29, 29, 29, 0.3) ;
+}
+
+/* ----Style Manager---- */
+
+.container.manager {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(92, 57, 0, 0.4), rgba(141, 68, 0, 0.4), rgba(0, 0, 0, 1) ), url(../img/M_bg-image.jpg);
+}
+
+.container.manager h1,
+.container.manager h2, 
+.container.manager h3, 
+.container.manager h4, 
+.container.manager h5{
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0.3) ;
+}
+
+.container.manager a{
+    text-decoration: none;
+    cursor:default;
+}
+/* ------------------------------------------------ */
+
+/* ----------------- Options ---------------------- */
+.container.manager .options{
+    font-size: 36px;
+}
+.container.manager .options:hover{
+    cursor:pointer;
+    color: rgb(0, 0, 0);
+    background-color: rgba(255, 255, 255, 0.15) ;
+}
+/* ------------------------------------------------ */
+
+/* ----------------- NAVBAR ---------------------- */
+.navbar {
+    width: 80%;
+    margin: auto;
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.2rem;
+}
+
+.navbar ul li::before {
+    content: "";
+    height: 3px;
+    width: 0%;
+    position: absolute;
+    background: #FFFFFF;
+    left: 0;
+    bottom: -12px;
+    transition: 0.4s ease-out;
+}
+
+.navbar ul li:hover::before {
+    width: 100%;
+}
+/* ------------------------------------------------ */
+
+/* ----------------- CSS Images ---------------------- */
+.logo { /*Estas medidas variarán dependiendo del logo a utilizar */
+    width: 180px;
+    cursor: pointer;
+}
+
+.backarrow{
+    padding: 20px; 
+    filter: invert(100%); 
+    width: 50px;
+}
+
+.backarrow:hover{
+    filter: invert(30%);
+    cursor:pointer;
+}
+
+.map{
+    width: 500px;
+    height: 500px;
+    margin-left: 25px;
+    background-color: rgba(224, 224, 224, 0.3) ;
+    border-radius: 8px;
+}
+/* ------------------------------------------------ */
+
+/* ----------------- FOOTER ---------------------- */
+.footer{
+    display:flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+/* ------------------------------------------------ */
+
+/* ----------------- FORMULARIOS ---------------------- */
+/* ----Regular---- */
+.form{
+    background: #000000c7;
+    padding: 30px;
+    margin: auto;
+    margin-top: 0px;
+    color: #FFFFFF;
+    box-shadow: 0px 0px 40px #ffffff;
+
+    width: 700px;
+    border-radius: 4px;
+}
+
+.form h1,
+.form h2, 
+.form h3, 
+.form h4, 
+.form h5{
+    background-color: rgba(0, 0, 0, 0) ;
+}
+
+.buttons {
+    width: 95%;
+    background: #FFFFFFb9;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    color: #000000;
+
+    margin: 16px;
+    font-weight:bold;
+}
+
+.buttons:hover {
+    background: #3d3d3d5d;
+    color:#FFFFFF;
+    cursor:pointer;
+}
+
+.buttons.dark {
+    background: #3d3d3d5d;
+    color: #ffffff;
+}
+
+.buttons.dark:hover {
+    background: #0000005d;
+}
+
+.controls {
+    width: 95%;
+    background: #3838387c;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #c7c7c7;
+    font-size: 18px;
+    color: #FFFFFF;
+
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.form select{
+    width: 99%;
+    color: #ffffff;
+}
+
+.form option{
+    background-color: rgba(0,0,0,0.8);
+    color:#ffffff;
+}
+/* --------------- */
+
+/* ----Map---- */
+.form.map {
+    width: 80%;
+    border-radius: 50px;
+    display: flex;
+    flex: 1;
+    padding: 5px; /* para que la imagen no quede muy ajustada */
+    z-index: 5;
+}
+/* --------------- */
+
+/* ----Manager---- */
+.form.manager {
+    width: 700px;
+    border-radius: 4px;
+}
+/* --------------- */
+
+/* ------------------------------------------------ */
