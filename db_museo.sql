@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 14-09-2022 a las 23:38:15
+-- Tiempo de generación: 16-09-2022 a las 00:31:20
 -- Versión del servidor: 10.4.20-MariaDB
 -- Versión de PHP: 8.0.9
 
@@ -29,9 +29,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `administrador` (
   `id_administrador` int(11) NOT NULL,
-  `id_persona` int(11) NOT NULL,
   `username` varchar(24) NOT NULL,
-  `contraseña` varchar(24) NOT NULL
+  `contraseña` varchar(24) NOT NULL,
+  `id_persona` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -55,8 +55,10 @@ CREATE TABLE `datos_persona` (
 
 CREATE TABLE `exposiciones` (
   `id_exposiciones` int(11) NOT NULL,
-  `id_salas` int(11) NOT NULL,
-  `titulo_exposicion` varchar(32) NOT NULL
+  `titulo_exposicion` varchar(32) NOT NULL,
+  `deshabilitado` datetime NOT NULL,
+  `Autor` varchar(24) NOT NULL,
+  `id_sala` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -67,9 +69,10 @@ CREATE TABLE `exposiciones` (
 
 CREATE TABLE `gestion` (
   `id_gestion` int(11) NOT NULL,
-  `id_administrador` int(11) NOT NULL,
-  `id_exposiciones` int(11) NOT NULL,
-  `fecha_exposicion` date NOT NULL
+  `fecha_exposicion` date NOT NULL,
+  `descripcion` varchar(255) NOT NULL,
+  `id_:administrador` int(11) NOT NULL,
+  `id_exposicion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -80,7 +83,18 @@ CREATE TABLE `gestion` (
 
 CREATE TABLE `guia` (
   `id_guia` int(11) NOT NULL,
-  `id_persona` int(11) NOT NULL,
+  `id_persona` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `guia_idioma`
+--
+
+CREATE TABLE `guia_idioma` (
+  `id_guiaidioma` int(11) NOT NULL,
+  `id_guia` int(11) NOT NULL,
   `id_idioma` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -147,10 +161,10 @@ CREATE TABLE `salas` (
 
 CREATE TABLE `turno` (
   `id_turno` int(11) NOT NULL,
+  `fecha_turno` date NOT NULL,
   `id_visitante` int(11) NOT NULL,
-  `id_receptor` int(11) NOT NULL,
   `id_visitaguiada` int(11) NOT NULL,
-  `fecha_turno` date NOT NULL
+  `id_receptor` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -161,10 +175,10 @@ CREATE TABLE `turno` (
 
 CREATE TABLE `visitante` (
   `id_visitante` int(11) NOT NULL,
-  `id_persona` int(11) NOT NULL,
   `email` varchar(32) NOT NULL,
   `numero_telefono` int(11) NOT NULL,
-  `cantidad_visitantes` int(11) NOT NULL
+  `cantidad_visitantes` int(11) NOT NULL,
+  `id_persona` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -175,11 +189,11 @@ CREATE TABLE `visitante` (
 
 CREATE TABLE `visita_guiada` (
   `id_visitaguiada` int(11) NOT NULL,
-  `id_guia` int(11) NOT NULL,
-  `id_recorrido` int(11) NOT NULL,
   `fecha_visita` date NOT NULL,
   `horario` time NOT NULL,
-  `visitante_total` int(11) NOT NULL
+  `visitante_total` int(11) NOT NULL,
+  `id_recorrido` int(11) NOT NULL,
+  `id_guia` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -191,7 +205,7 @@ CREATE TABLE `visita_guiada` (
 --
 ALTER TABLE `administrador`
   ADD PRIMARY KEY (`id_administrador`),
-  ADD UNIQUE KEY `id_persona` (`id_persona`);
+  ADD KEY `id_persona` (`id_persona`);
 
 --
 -- Indices de la tabla `datos_persona`
@@ -204,23 +218,30 @@ ALTER TABLE `datos_persona`
 --
 ALTER TABLE `exposiciones`
   ADD PRIMARY KEY (`id_exposiciones`),
-  ADD UNIQUE KEY `id_salas` (`id_salas`);
+  ADD KEY `id_sala` (`id_sala`);
 
 --
 -- Indices de la tabla `gestion`
 --
 ALTER TABLE `gestion`
   ADD PRIMARY KEY (`id_gestion`),
-  ADD UNIQUE KEY `id_administrador` (`id_administrador`),
-  ADD UNIQUE KEY `id_exposiciones` (`id_exposiciones`);
+  ADD KEY `id_:administrador` (`id_:administrador`),
+  ADD KEY `id_exposicion` (`id_exposicion`);
 
 --
 -- Indices de la tabla `guia`
 --
 ALTER TABLE `guia`
   ADD PRIMARY KEY (`id_guia`),
-  ADD UNIQUE KEY `id_persona` (`id_persona`),
-  ADD UNIQUE KEY `id_idioma` (`id_idioma`);
+  ADD KEY `id_persona` (`id_persona`);
+
+--
+-- Indices de la tabla `guia_idioma`
+--
+ALTER TABLE `guia_idioma`
+  ADD PRIMARY KEY (`id_guiaidioma`),
+  ADD KEY `id_guia` (`id_guia`),
+  ADD KEY `id_idioma` (`id_idioma`);
 
 --
 -- Indices de la tabla `idioma`
@@ -239,46 +260,45 @@ ALTER TABLE `institucion`
 --
 ALTER TABLE `receptor`
   ADD PRIMARY KEY (`id_receptor`),
-  ADD UNIQUE KEY `id_receptor` (`id_receptor`),
-  ADD UNIQUE KEY `id_institucion` (`id_institucion`);
+  ADD KEY `id_institucion` (`id_institucion`);
 
 --
 -- Indices de la tabla `recorrido`
 --
 ALTER TABLE `recorrido`
   ADD PRIMARY KEY (`id_recorrido`),
-  ADD UNIQUE KEY `id_institucion` (`id_institucion`);
+  ADD KEY `id_institucion` (`id_institucion`);
 
 --
 -- Indices de la tabla `salas`
 --
 ALTER TABLE `salas`
   ADD PRIMARY KEY (`id_salas`),
-  ADD UNIQUE KEY `id_institucion` (`id_institucion`);
+  ADD KEY `id_institucion` (`id_institucion`);
 
 --
 -- Indices de la tabla `turno`
 --
 ALTER TABLE `turno`
   ADD PRIMARY KEY (`id_turno`),
-  ADD UNIQUE KEY `id_visitante` (`id_visitante`),
-  ADD UNIQUE KEY `id_receptor` (`id_receptor`),
-  ADD UNIQUE KEY `id_visitaguiada` (`id_visitaguiada`);
+  ADD KEY `id_visitante` (`id_visitante`),
+  ADD KEY `id_visitaguiada` (`id_visitaguiada`),
+  ADD KEY `id_receptor` (`id_receptor`);
 
 --
 -- Indices de la tabla `visitante`
 --
 ALTER TABLE `visitante`
   ADD PRIMARY KEY (`id_visitante`),
-  ADD UNIQUE KEY `id_persona` (`id_persona`);
+  ADD KEY `id_persona` (`id_persona`);
 
 --
 -- Indices de la tabla `visita_guiada`
 --
 ALTER TABLE `visita_guiada`
   ADD PRIMARY KEY (`id_visitaguiada`),
-  ADD UNIQUE KEY `id_guia` (`id_guia`),
-  ADD UNIQUE KEY `id_recorrido` (`id_recorrido`);
+  ADD KEY `id_recorrido` (`id_recorrido`),
+  ADD KEY `id_guia` (`id_guia`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -313,6 +333,12 @@ ALTER TABLE `gestion`
 --
 ALTER TABLE `guia`
   MODIFY `id_guia` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `guia_idioma`
+--
+ALTER TABLE `guia_idioma`
+  MODIFY `id_guiaidioma` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `idioma`
@@ -376,21 +402,27 @@ ALTER TABLE `administrador`
 -- Filtros para la tabla `exposiciones`
 --
 ALTER TABLE `exposiciones`
-  ADD CONSTRAINT `relacion_exposiciones_salas` FOREIGN KEY (`id_salas`) REFERENCES `salas` (`id_salas`);
+  ADD CONSTRAINT `exposicion_sala` FOREIGN KEY (`id_sala`) REFERENCES `salas` (`id_salas`);
 
 --
 -- Filtros para la tabla `gestion`
 --
 ALTER TABLE `gestion`
-  ADD CONSTRAINT `relacion_gestion_admin` FOREIGN KEY (`id_administrador`) REFERENCES `administrador` (`id_administrador`),
-  ADD CONSTRAINT `relacion_gestion_exposicion` FOREIGN KEY (`id_exposiciones`) REFERENCES `exposiciones` (`id_exposiciones`);
+  ADD CONSTRAINT `relacion_gestion_admin` FOREIGN KEY (`id_:administrador`) REFERENCES `administrador` (`id_administrador`),
+  ADD CONSTRAINT `relacion_gestion_exposiciones` FOREIGN KEY (`id_exposicion`) REFERENCES `exposiciones` (`id_exposiciones`);
 
 --
 -- Filtros para la tabla `guia`
 --
 ALTER TABLE `guia`
-  ADD CONSTRAINT `relacion_guia_idioma` FOREIGN KEY (`id_idioma`) REFERENCES `idioma` (`id_idioma`),
   ADD CONSTRAINT `rol_persona_guia` FOREIGN KEY (`id_persona`) REFERENCES `datos_persona` (`id_persona`);
+
+--
+-- Filtros para la tabla `guia_idioma`
+--
+ALTER TABLE `guia_idioma`
+  ADD CONSTRAINT `guia_idioma_guia` FOREIGN KEY (`id_guia`) REFERENCES `guia` (`id_guia`),
+  ADD CONSTRAINT `guia_idioma_idioma` FOREIGN KEY (`id_idioma`) REFERENCES `idioma` (`id_idioma`);
 
 --
 -- Filtros para la tabla `receptor`
@@ -402,34 +434,34 @@ ALTER TABLE `receptor`
 -- Filtros para la tabla `recorrido`
 --
 ALTER TABLE `recorrido`
-  ADD CONSTRAINT `rol_institucion_recorrido` FOREIGN KEY (`id_institucion`) REFERENCES `institucion` (`id_institucion`);
+  ADD CONSTRAINT `rol_institucion_recorrido` FOREIGN KEY (`id_institucion`) REFERENCES `recorrido` (`id_recorrido`);
 
 --
 -- Filtros para la tabla `salas`
 --
 ALTER TABLE `salas`
-  ADD CONSTRAINT `rol_institucion_salas` FOREIGN KEY (`id_salas`) REFERENCES `institucion` (`id_institucion`);
+  ADD CONSTRAINT `rol_institucion_sala` FOREIGN KEY (`id_institucion`) REFERENCES `institucion` (`id_institucion`);
 
 --
 -- Filtros para la tabla `turno`
 --
 ALTER TABLE `turno`
   ADD CONSTRAINT `relacion_turno_receptor` FOREIGN KEY (`id_receptor`) REFERENCES `receptor` (`id_receptor`),
-  ADD CONSTRAINT `relacion_turno_visita` FOREIGN KEY (`id_visitaguiada`) REFERENCES `visita_guiada` (`id_visitaguiada`),
+  ADD CONSTRAINT `relacion_turno_visitaguiada` FOREIGN KEY (`id_visitaguiada`) REFERENCES `visita_guiada` (`id_visitaguiada`),
   ADD CONSTRAINT `relacion_turno_visitante` FOREIGN KEY (`id_visitante`) REFERENCES `visitante` (`id_visitante`);
 
 --
 -- Filtros para la tabla `visitante`
 --
 ALTER TABLE `visitante`
-  ADD CONSTRAINT `rol_persona_visitante` FOREIGN KEY (`id_persona`) REFERENCES `datos_persona` (`id_persona`);
+  ADD CONSTRAINT `rol_persona_visita` FOREIGN KEY (`id_persona`) REFERENCES `datos_persona` (`id_persona`);
 
 --
 -- Filtros para la tabla `visita_guiada`
 --
 ALTER TABLE `visita_guiada`
-  ADD CONSTRAINT `relacion_visita_guia` FOREIGN KEY (`id_guia`) REFERENCES `guia` (`id_guia`),
-  ADD CONSTRAINT `relacion_visita_recorrido` FOREIGN KEY (`id_recorrido`) REFERENCES `recorrido` (`id_recorrido`);
+  ADD CONSTRAINT `visita_guiada_guia` FOREIGN KEY (`id_guia`) REFERENCES `guia` (`id_guia`),
+  ADD CONSTRAINT `visita_guiada_recorrido` FOREIGN KEY (`id_recorrido`) REFERENCES `recorrido` (`id_recorrido`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
