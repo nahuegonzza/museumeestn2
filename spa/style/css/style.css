@@ -15,8 +15,7 @@ h7 {
 /* ----Regular---- */
 .container {
     display:flex;
-    flex-direction: column;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.4), rgba(0, 0, 0, 1) ), url(../img/bg-image.jpg);
+    flex-direction: column;    
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -56,8 +55,10 @@ h7 {
 /* ----Style Manager---- */
 
 .container.manager {
+    /*
     background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(92, 57, 0, 0.4), rgba(141, 68, 0, 0.4), rgba(0, 0, 0, 1) ), url(../img/M_bg-image.jpg);
-    
+    */ 
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(150, 90, 19, 0.4), rgba(150, 90, 19, 0.4), rgba(0, 0, 0, 0) )
 }
 
 .container.manager h1,
@@ -66,7 +67,7 @@ h7 {
 .container.manager h4, 
 .container.manager h5{
     color: rgb(255, 255, 255);
-    background-color: rgba(0, 0, 0, 0.3) ;
+    background-color: rgba(0, 0, 0, 0) ;
 }
 
 .container.manager a{
@@ -79,12 +80,12 @@ h7 {
 .container.manager .options{
     font-size: 36px;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5) ;
+    background-color: rgba(0, 0, 0, 0.4) ;
 }
 .container.manager .options:hover{
     cursor:pointer;
     color: rgb(0, 0, 0);
-    background-color: rgba(255, 255, 255, 0.15) ;
+    background-color: rgba(0, 0, 0, 0.2) ;
 }
 /* ------------------------------------------------ */
 
@@ -146,7 +147,6 @@ h7 {
     width: 95%;
     height: 95%;
     display: block;
-    margin-left: 6%;
     background-color: rgba(35, 35, 35, 0.5) ;
     border-radius: 8px;
     cursor:pointer;
@@ -270,6 +270,15 @@ h7 {
 }
 /* --------------- */
 
+/* ----Manager---- */
+.form.manager {
+    width: 60%;
+    border-radius: 4px;
+    background: #673f147f;
+    box-shadow: 0px 0px 40px #ff9100a4;
+}
+/* --------------- */
+
 /* ----Map---- */
 .form.map {
     text-align: center;
@@ -282,51 +291,9 @@ h7 {
 }
 /* --------------- */
 
-/* ----Manager---- */
-.form.manager {
-    width: 60%;
-    border-radius: 4px;
-}
-/* --------------- */
-
 /* ------------------------------------------------ */
 
-/* ----------------- GRID ---------------------- */
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1;
-    text-align: center;
-}
-
-  @media (max-width: 600px) {
-    .grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-    }
-    grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr;
-    }
-    .map{
-        width: 85%;
-        height: 85%;
-    }
-    .form.map img{
-        width: 100%;
-    }
-    .controls {
-        width: 90%;
-    }
-    .buttons {
-        width: 85%;
-    }
-  }
-/* ------------------------------------------------ */
-
+/* ----------------- CARD ---------------------- */
 .card{
     display:flex;
     flex-direction: column;
@@ -367,9 +334,13 @@ h7 {
     border-radius: 8px;
     cursor:default;
     margin:auto;
-}
+}  
 
-grid {
+/* ------------------------------------------------ */
+
+/* ----------------- GRID ---------------------- */
+
+.grid {
     display: grid;
     padding-left: 5%;
     padding-right: 5%;
@@ -377,3 +348,33 @@ grid {
     grid-template-rows: 1;
     text-align: center;
 }
+
+/* ------------------------------------------------ */
+
+/* ----------------- MediaQuery ---------------------- */
+
+  @media (max-width: 300px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr;
+    }
+    .grid h2{
+        background-color: #00b7ff;
+    }
+    .map{
+        width: 85%;
+        height: 85%;
+    }
+    .form.map img{
+        width: 100%;
+    }
+    .controls {
+        width: 90%;
+    }
+    .buttons {
+        width: 85%;
+    }
+  }
+
+/* ------------------------------------------------ */

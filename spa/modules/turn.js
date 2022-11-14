@@ -22,26 +22,29 @@ class turn{
                         {type: "option", props:{value:"5"}, children:["5"]},
                         {type: "option", props:{value:"6"}, children:["6"]}
                     ]},
-                    {type: "select", props:{class:"controls", name:"idioma", id:"idioma", required:"required"}, children:[
-                        {type: "option", props:{value:""}, children:["Idioma"]},
-                        {type: "option", props:{value:"1"}, children:["Español"]},
-                        {type: "option", props:{value:"2"}, children:["Ingles"]},
-                        {type: "option", props:{value:"3"}, children:["Frances"]},
+                    {type: "div", props:{id:"here"}, children:[]},
+                    {type: "select", props:{class:"controls", name:"turno", id:"turno", required:"required"}, children:[
+                        {type: "option", props:{value:""}, children:["Turnos Disponibles"]},
+                        {type: "option", props:{value:"1"}, children:["Español - 19/12/2022 - 09:30hs"]},
+                        {type: "option", props:{value:"2"}, children:["Ingles - 20/12/2022 - 08:30hs"]},
+                        {type: "option", props:{value:"3"}, children:["Frances - 21/12/2022 - 11:00hs"]},
                     ]},
                     {type:"br"},
+                    {type:"input", props:{class:"buttons", type:"button", onclick: ()=> { this._CargarDatos()}, value:"awa"}},
                     {type:"input", props:{class:"buttons", type:"submit", value:"Solicitar Turno"}}
                 ]}
             ]}
         ];
-        this._CargarDatos();
+        //this._CargarDatos();
     }
 
     _CargarDatos = ()=>{
         let Cards = [
             {id:"Select", title:"Select",
-                opciones: [
-                    { id: "Desc-01", opcion: "Opcion 1"},
-                    { id: "Desc-02", opcion: "Opcion 2"}
+                info: [
+                    {nro:"1", lang:"Español", datetime: "191220220930"}, //19/12/2022 - 09:30
+                    {nro:"2", lang:"Ingles", datetime: "211220220830"}, //21/12/2022 - 08:30
+                    {nro:"3", lang:"Frances", datetime: "241220221100"}, //24/12/2022 - 11:00
                 ]
             },
         ];
@@ -50,17 +53,38 @@ class turn{
             this.children.push(CardI);
         })
     }
+
+    Conectar = async (url, id, dir)=> {
+        const {MyBody} = await import("../../scripts/masterTemplate.js")
+        const MyBody1 = new MyBody();
+        MyBody1.Navegando(url, id, dir);
+    }
 }
 
 class MyCard{ 
     constructor(props, data){
         this.type = "select"
         this.props = props;
-        this.props.class = "card";
+        this.props.class = "controls";
         this.children = []
-        data.opciones.forEach(element => {
+        this.children.push({type: "option", props:{value:""}, children:["Turnos Disponibles" ]})
+        data.info.forEach(element => {
             this.children.push(
-                {type: "option", children:[element.opcion]},
+                {type: "option", props:{value:element.nro}, children:[
+                    element.lang + " - " +
+                    element.datetime[0] +
+                    element.datetime[1] + "/" +
+                    element.datetime[2] +
+                    element.datetime[3] + "/" +
+                    element.datetime[4] +
+                    element.datetime[5] + 
+                    element.datetime[6] +
+                    element.datetime[7] + " - " +
+                    element.datetime[8] +
+                    element.datetime[9] + ":"  +
+                    element.datetime[10] +
+                    element.datetime[11] + "hs"
+                ]},
             )
         });
     }

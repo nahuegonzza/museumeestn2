@@ -1,8 +1,9 @@
 class visita{
     constructor(props){
-        this.type = "grid";
+        this.type = "div";
         this.props = {class:"Identifier"};
         this.props = props;
+        this.props = {class:"Identifier grid"};
         this._CargarDatos();
     }
     
@@ -94,7 +95,7 @@ class visita{
 
 class MyCard{ 
     constructor(props, data){
-        this.type = "card"
+        this.type = "div"
         this.props = props;
         this.props.class = "card";
         this.children = [
