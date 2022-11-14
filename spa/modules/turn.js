@@ -5,8 +5,11 @@ class turn{
         this.props = props;
         this.children = [ 
             {type:"br"},
-            {type: "section", props:{class:"form"}, children:[
-                {type: "form", children:[
+            {type: "section",
+             props:{class:"form"}, 
+             children:[
+                {type: "form", 
+                children:[
                     {type: "h2", children:["Solicitud de Turnos"]},
                     {type: "input", props:{class:"controls", type:"text", name:"nombres", id:"nombres", placeholder:"Nombre", required:"required"}},
                     {type: "input", props:{class:"controls", type:"text", name:"apellidos", id:"apellidos", placeholder:"Apellido", required:"required"}},
@@ -22,20 +25,12 @@ class turn{
                         {type: "option", props:{value:"5"}, children:["5"]},
                         {type: "option", props:{value:"6"}, children:["6"]}
                     ]},
-                    {type: "div", props:{id:"here"}, children:[]},
-                    {type: "select", props:{class:"controls", name:"turno", id:"turno", required:"required"}, children:[
-                        {type: "option", props:{value:""}, children:["Turnos Disponibles"]},
-                        {type: "option", props:{value:"1"}, children:["Español - 19/12/2022 - 09:30hs"]},
-                        {type: "option", props:{value:"2"}, children:["Ingles - 20/12/2022 - 08:30hs"]},
-                        {type: "option", props:{value:"3"}, children:["Frances - 21/12/2022 - 11:00hs"]},
-                    ]},
-                    {type:"br"},
-                    {type:"input", props:{class:"buttons", type:"button", onclick: ()=> { this._CargarDatos()}, value:"awa"}},
+                    {type: "div", children:[ ]},
                     {type:"input", props:{class:"buttons", type:"submit", value:"Solicitar Turno"}}
                 ]}
             ]}
         ];
-        //this._CargarDatos();
+        this._CargarDatos();
     }
 
     _CargarDatos = ()=>{
@@ -50,7 +45,7 @@ class turn{
         ];
         Cards.forEach(card =>{
             const CardI = new MyCard({type:"select", id: card.id}, card);
-            this.children.push(CardI);
+            this.children[1].children[0].children[7].children.push(CardI)
         })
     }
 
@@ -67,7 +62,7 @@ class MyCard{
         this.props = props;
         this.props.class = "controls";
         this.children = []
-        this.children.push({type: "option", props:{value:""}, children:["Turnos Disponibles" ]})
+        this.children.push({type: "option", props:{value:""}, children:["Seleccione un Turno" ]})
         data.info.forEach(element => {
             this.children.push(
                 {type: "option", props:{value:element.nro}, children:[

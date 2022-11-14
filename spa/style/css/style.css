@@ -21,6 +21,8 @@ h7 {
     background-repeat: no-repeat;
     text-align: center;
     padding-bottom: 25px;
+    margin-top: 10px;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1) ), url(../img/bg-image2.jpg);
 }
 
 .container h1,
@@ -32,33 +34,15 @@ h7 {
     margin-left: 3%;
     margin-right: 3%;
     margin-top: 1%;
-    color: rgb(0, 0, 0);
-    background-color: rgba(255, 255, 255, 0.2) ;
+    color: rgb(255, 255, 255);
+    background-color: rgba(29, 29, 29, 0.5) ;
     cursor:default;
     border-radius: 6px;
 }
-/* ----Style2---- */
-.container.style2 {
-    margin-top: 10px;
-    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1) ), url(../img/bg-image2.jpg);
-}
-
-.container.style2 h1,
-.container.style2 h2, 
-.container.style2 h3, 
-.container.style2 h4, 
-.container.style2 h5{
-    color: #FEFFFF;
-    background-color: rgba(29, 29, 29, 0.5) ;
-}
 
 /* ----Style Manager---- */
-
 .container.manager {
-    /*
-    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(92, 57, 0, 0.4), rgba(141, 68, 0, 0.4), rgba(0, 0, 0, 1) ), url(../img/M_bg-image.jpg);
-    */ 
-    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(150, 90, 19, 0.4), rgba(150, 90, 19, 0.4), rgba(0, 0, 0, 0) )
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(19, 90, 150, 0.4), rgba(19, 90, 150, 0.4), rgba(0, 0, 0, 0) )
 }
 
 .container.manager h1,
@@ -74,9 +58,9 @@ h7 {
     text-decoration: none;
     cursor:default;
 }
-/* ------------------------------------------------ */
+/* ------------------------- */
 
-/* ----------------- Options ---------------------- */
+/* ----------- Options ------------- */
 .container.manager .options{
     font-size: 36px;
     padding: 20px;
@@ -84,7 +68,7 @@ h7 {
 }
 .container.manager .options:hover{
     cursor:pointer;
-    color: rgb(0, 0, 0);
+    color: rgba(0, 0, 0, 0.8);
     background-color: rgba(0, 0, 0, 0.2) ;
 }
 /* ------------------------------------------------ */
@@ -132,17 +116,6 @@ h7 {
     cursor: pointer;
 }
 
-.backarrow{
-    padding: 20px; 
-    filter: invert(100%); 
-    width: 50px;
-}
-
-.backarrow:hover{
-    filter: invert(30%);
-    cursor:pointer;
-}
-
 .map{
     width: 95%;
     height: 95%;
@@ -152,7 +125,7 @@ h7 {
     cursor:pointer;
 }
 
-.map2{
+.mapB{
     width: 90%;
     height: 90%;
     display: block;
@@ -161,15 +134,6 @@ h7 {
     background-color: rgba(15, 15, 15, 0.8) ;
     border-radius: 50px;
     cursor:default;
-}
-
-.mainTextDiv{
-    padding-top:3px; 
-    text-align:center;
-}
-
-.mainTextDiv h1{
-    font-size:40px;
 }
 /* ------------------------------------------------ */
 
@@ -274,8 +238,8 @@ h7 {
 .form.manager {
     width: 60%;
     border-radius: 4px;
-    background: #673f147f;
-    box-shadow: 0px 0px 40px #ff9100a4;
+    background: #143b677f;
+    box-shadow: 0px 0px 40px #0077ffa4;
 }
 /* --------------- */
 
@@ -347,6 +311,15 @@ h7 {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1;
     text-align: center;
+}
+
+.mainTextDiv{
+    padding-top:3px; 
+    text-align:center;
+}
+
+.mainTextDiv h1{
+    font-size:40px;
 }
 
 /* ------------------------------------------------ */

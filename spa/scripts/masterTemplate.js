@@ -17,7 +17,7 @@ class domClass{
             MyContainer.append(this.navForm[id])
             return;
         }
-        console.log(this.navForm)
+        //console.log(this.navForm)
         const ObjNav = await import(url);
         const ObjNavInstance = new ObjNav[id]({id: id, class:"Identifier"});
         const MyForm = Render(ObjNavInstance)
@@ -35,7 +35,7 @@ class MyBody extends domClass{
         this.main = new MyContainer1();
         this.footer = new MyFooter();
         this.children = [
-            {type: "div", props:{id: "Container1", class: "container style2"}, children:[ 
+            {type: "div", props:{id: "Container1", class: "container"}, children:[ 
                 this.header, this.main, ]},
              this.footer
         ];

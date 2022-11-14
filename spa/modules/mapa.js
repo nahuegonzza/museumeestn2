@@ -5,7 +5,7 @@ class mapa{
         this.props = props;
     }
     children = [
-        {type: "img", props:{class:"map2", src:"style/img/mapa-museo.png"}}
+        {type: "img", props:{class:"mapB", src:"style/img/mapa-museo.png"}}
     ]
 }
 

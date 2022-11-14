@@ -7,9 +7,9 @@ class M_turnos{
     }
     children = [ {type:"div", props:{class: "form manager"}, children:[
         {type: "h1", props:{style:"font-size:36px;"}, children:["Administrador de Turnos"]},
-        {type: "input", props:{type:"button", class:"buttons", id:"newTurnos", name:"newTurnos", value:"Nueva Turnos"}},
-        {type: "input", props:{type:"button", class:"buttons", id:"modifyTurnos", name:"modifyTurnos", value:"Modificar Turnos"}},
-        {type: "input", props:{type:"button", class:"buttons", id:"cancelTurnos", name:"cancelTurnos", value:"Cancelar Turnos"}},
+        {type: "input", props:{type:"button", class:"buttons", id:"newTurnos", name:"newTurnos", value:"Nuevo Turno", onclick: ()=> { this.Conectar("../modules/Manager/Turnos/newTurnos.js", "newTurnos", "Main")}}},
+        {type: "input", props:{type:"button", class:"buttons", id:"modifyTurnos", name:"modifyTurnos", value:"Modificar Turnos", onclick: ()=> { this.Conectar("../modules/Manager/Turnos/modifyTurnos.js", "modifyTurnos", "Main")}}},
+        {type: "input", props:{type:"button", class:"buttons", id:"cancelTurnos", name:"cancelTurnos", value:"Cancelar Turnos", onclick: ()=> { this.Conectar("../modules/Manager/Turnos/cancelTurnos.js", "cancelTurnos", "Main")}}},
         {type: "input", props:{type:"button", class:"buttons", id:"volver", name:"volver", value:"Volver", onclick: ()=> { this.Conectar("../modules/Manager/M_index.js", "M_index", "Main") }}}
         ]}
     ]
