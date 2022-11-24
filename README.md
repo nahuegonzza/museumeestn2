@@ -1,6 +1,6 @@
 # Objetivos Pendientes:
 ---------------------
-##### Entiendase "❌" como INCOMPLETO, "⌚" como EN PROCESO y "✅" como COMPLETADO
+###### Entiendase "❌" como INCOMPLETO, "⌚" como EN PROCESO y "✅" como COMPLETADO
 ---------------------
 ### SPA:
 - Aplicar Normas ARIA ❌
