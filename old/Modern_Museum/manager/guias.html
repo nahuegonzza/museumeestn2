@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Web - Guías</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible">
+    <link rel="stylesheet" href="../style/css/style.css">
+    <link rel="icon" href="../style/img/favicon.png">
+    <script src="functions.js"></script>
+</head>
+<body>
+    <div class="container manager">
+        <div class="navbar">
+            <a href="../manager_index.html"><img src="../style/img/icono2.png" style="width: 100px;" class="logo" alt="Main Logo"></a>
+            
+            <ul>
+                <li><a href="../login.html" style="color:#FFF; cursor:pointer"><b>Cerrar Sesion</b></a></li>
+            </ul>
+        </div>
+        <div class="form manager" id="indexG_div" style="display:block">
+            <h1 style="font-size:36px;">Administrador de Guías</h1>
+            <input type="button" class="buttons" id="newGuias" name="newGuias" value="Nuevo Guía" onclick="newG()">
+            <input type="button" class="buttons" id="modifyGuias" name="modifyGuias" value="Modificar Guías" onclick="modifyG()">
+            <input type="button" class="buttons" id="deleteGuias" name="deleteGuias" value="Eliminar Guías" onclick="deleteG()">
+            <a href="../manager_index.html"><input type="button" class="buttons dark" value="Volver"></a>
+        </div>
+        <div class="form manager" id="newG_div" style="display:none">
+            <h1 style="font-size:36px;">Nuevo Guía</h1>
+            <form>
+                <input class="controls" type="text" name="GuiasN" id="GuiasN" placeholder="Nombre del Guía" required>
+                <input class="controls" type="text" name="GuiasA" id="GuiasA" placeholder="Apellido del Guía" required>
+                <input class="controls" type="text" name="GuiaDNI" id="GuiaDNI" placeholder="DNI del Guía" pattern="[0-9]{6,8}" title="XX.XXX.XXX (Solo Numeros)" required>           
+                <h7>(Listado de Idiomas para seleccionar uno o varios)</h7>
+                <input class="buttons" type="submit" value="Crear">
+            </form>
+            <input type="button" class="buttons dark"value="Volver" onclick="indexG()">
+        </div>
+        <div class="form manager" id="modifyG_div" style="display:none">
+            <h1 style="font-size:36px;">Modificar Guías</h1>
+            <h7>(Lista de Guías para seleccionar uno)</h7>
+            <input type="button" class="buttons dark"value="Volver" onclick="indexG()">
+        </div>
+        <div class="form manager" id="deleteG_div" style="display:none">
+            <h1 style="font-size:36px;">Eliminar Guías</h1>
+            <h7>(Lista de Guías para seleccionar uno o varias con tickeo)</h7>
+            <input type="button" class="buttons dark"value="Volver" onclick="indexG()">
+        </div>
+    </div>
+    <footer class="footer">
+        <h5>
+            <b style="font-size:20px;">Museo Argentino de Ciencias Naturales "Bernardino Rivadavia"</b>
+        <br>
+            Av. Angel Gallardo 470 - C1405DJR - Buenos Aires - Argentina.
+        <br>
+            Tel/Fax.: (5411) 4982-6595 / 8370 / 8797 / 4791 / 6670 / 1561 / 9410. (5411) 4981-9365 / 9282.
+        </h5>  
+    </footer>
+</body>
+</html>

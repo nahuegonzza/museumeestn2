@@ -1,0 +1,353 @@
+body {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    color: #FEFFFF;
+}
+
+h7 {
+    color:rgb(255, 0, 0);
+    font-style: italic;
+}
+
+/* ----------------- CONTAINERS ---------------------- */
+/* ----Regular---- */
+.container {
+    display:flex;
+    flex-direction: column;    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-bottom: 25px;
+    margin-top: 10px;
+    background-image: linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 1) ), url(../img/bg-image2.jpg);
+}
+
+.container h1,
+.container h2, 
+.container h3, 
+.container h4, 
+.container h5{
+    padding: 5px;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 1%;
+    color: rgb(255, 255, 255);
+    background-color: rgba(29, 29, 29, 0.5) ;
+    cursor:default;
+    border-radius: 6px;
+}
+
+/* ----Style Manager---- */
+.container.manager {
+    background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(19, 90, 150, 0.4), rgba(19, 90, 150, 0.4), rgba(0, 0, 0, 0) )
+}
+
+.container.manager h1,
+.container.manager h2, 
+.container.manager h3, 
+.container.manager h4, 
+.container.manager h5{
+    color: rgb(255, 255, 255);
+    background-color: rgba(0, 0, 0, 0) ;
+}
+
+.container.manager a{
+    text-decoration: none;
+    cursor:default;
+}
+/* ------------------------- */
+
+/* ----------- Options ------------- */
+.container.manager .options{
+    font-size: 36px;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.4) ;
+}
+.container.manager .options:hover{
+    cursor:pointer;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.2) ;
+}
+/* ------------------------------------------------ */
+
+/* ----------------- NAVBAR ---------------------- */
+.navbar {
+    width: 85%;
+    margin: auto;
+    padding: 15px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    cursor:pointer;
+}
+
+.navbar ul li::before {
+    content: "";
+    height: 3px;
+    width: 0%;
+    position: absolute;
+    background: #00b7ff;
+    left: 0;
+    bottom: -12px;
+    transition: 0.4s ease-out;
+}
+
+.navbar ul li:hover::before {
+    width: 100%;
+}
+/* ------------------------------------------------ */
+
+/* ----------------- CSS Images ---------------------- */
+.logo { /*Estas medidas variarán dependiendo del logo a utilizar */
+    width: 250px;
+    cursor: pointer;
+}
+
+.map{
+    width: 95%;
+    height: 95%;
+    display: block;
+    background-color: rgba(35, 35, 35, 0.5) ;
+    border-radius: 8px;
+    cursor:pointer;
+}
+
+.mapB{
+    width: 90%;
+    height: 90%;
+    display: block;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: rgba(15, 15, 15, 0.8) ;
+    border-radius: 50px;
+    cursor:default;
+}
+/* ------------------------------------------------ */
+
+/* ----------------- FOOTER ---------------------- */
+.footer{
+    display:flex;
+    flex-direction: column;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    cursor:default;
+}
+
+.footer b{
+    font-size:18px;
+}
+
+.footer i{
+    font-size:10px;
+}
+/* ------------------------------------------------ */
+
+/* ----------------- FORMULARIOS ---------------------- */
+/* ----Regular---- */
+.form{
+    background: #000000c7;
+    padding: 30px;
+    margin: auto;
+    margin-top: 0px;
+    color: #FEFFFF;
+    box-shadow: 0px 0px 40px #FEFFFF;
+
+    width: 60%;
+    border-radius: 4px;
+}
+
+.form h1,
+.form h2, 
+.form h3, 
+.form h4, 
+.form h5{
+    background-color: rgba(0, 0, 0, 0) ;
+}
+
+.buttons {
+    width: 95%;
+    background: #FEFFFFb9;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 18px;
+    color: #000000;
+
+    margin: 16px;
+    font-weight:bold;
+}
+
+.buttons:hover {
+    background: #3d3d3d5d;
+    color:#FEFFFF;
+    cursor:pointer;
+}
+
+.buttons.dark {
+    background: #3d3d3d5d;
+    color: #FEFFFF;
+}
+
+.buttons.dark:hover {
+    background: #0000005d;
+}
+
+.controls {
+    width: 96%;
+    background: #3838387c;
+    padding: 12px;
+    border-radius: 5px;
+    border: 1px solid #c7c7c7;
+    font-size: 18px;
+    color: #FEFFFF;
+
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.form.login{
+    background: #000000c7;
+}
+.form select{
+    width: 99%;
+    color: #FEFFFF;
+}
+
+.form option{
+    background-color: rgba(0,0,0,0.8);
+    color:#FEFFFF;
+}
+/* --------------- */
+
+/* ----Manager---- */
+.form.manager {
+    width: 60%;
+    border-radius: 4px;
+    background: #143b677f;
+    box-shadow: 0px 0px 40px #0077ffa4;
+}
+/* --------------- */
+
+/* ----Map---- */
+.form.map {
+    text-align: center;
+    width: 75%;
+    border-radius: 50px;
+    display: flex;
+    flex: 1;
+    padding: 5px; /* para que la imagen no quede muy ajustada */
+    z-index: 5;
+}
+/* --------------- */
+
+/* ------------------------------------------------ */
+
+/* ----------------- CARD ---------------------- */
+.card{
+    display:flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-position: center;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-bottom: 25px;
+    margin-left:5%;
+    margin-right:5%;
+    margin-bottom:5%;
+    margin:auto;
+    border-radius: 16px;
+    border-style: dashed;
+}
+
+.card h1,
+.card h2, 
+.card h3, 
+.card h4, 
+.card h5{
+    padding: 5px;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-top: 1%;
+    color: rgb(255, 255, 255);
+    cursor:default;
+    border-radius: 6px;
+}
+
+.card img{
+    text-align: center;
+    width: 50%;
+    height: 50%;
+    display: inline;
+    margin-left: 15%;
+    margin-right: 15%;
+    border-radius: 8px;
+    cursor:default;
+    margin:auto;
+}  
+
+/* ------------------------------------------------ */
+
+/* ----------------- GRID ---------------------- */
+
+.grid {
+    display: grid;
+    padding-left: 5%;
+    padding-right: 5%;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1;
+    text-align: center;
+}
+
+.mainTextDiv{
+    padding-top:3px; 
+    text-align:center;
+}
+
+.mainTextDiv h1{
+    font-size:40px;
+}
+
+/* ------------------------------------------------ */
+
+/* ----------------- MediaQuery ---------------------- */
+
+  @media (max-width: 300px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 2fr;
+    }
+    .grid h2{
+        background-color: #00b7ff;
+    }
+    .map{
+        width: 85%;
+        height: 85%;
+    }
+    .form.map img{
+        width: 100%;
+    }
+    .controls {
+        width: 90%;
+    }
+    .buttons {
+        width: 85%;
+    }
+  }
+
+/* ------------------------------------------------ */

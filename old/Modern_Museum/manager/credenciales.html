@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manager Web - Credenciales</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Atkinson+Hyperlegible">
+    <link rel="stylesheet" href="../style/css/style.css">
+    <link rel="icon" href="../style/img/favicon.png">
+    <script src="functions.js"></script>
+</head>
+<body>
+    <div class="container manager">
+        <div class="navbar">
+            <a href="../manager_index.html"><img src="../style/img/icono2.png" style="width: 100px;" class="logo" alt="Main Logo"></a>
+            
+            <ul>
+                <!-- <li><a href="#">Sobre Nosotros</a></li> -->
+                <!-- <li><a href="#">Contacto</za></li> -->
+                <li><a href="../login.html" style="color:#FFF; cursor:pointer"><b>Cerrar Sesion</b></a></li>
+            </ul>
+        </div>
+        <div class="form manager" id="indexC_div" style="display:block">
+            <h1 style="font-size:36px;">Administrador de Credenciales</h1>
+            <input type="button" class="buttons" id="newCredencial" name="newCredencial" value="Nueva Credencial" onclick="newC()">
+            <input type="button" class="buttons" id="modifyCredencial" name="modifyCredencial" value="Modificar Credencial" onclick="modifyC()">
+            <input type="button" class="buttons" id="deleteCredencial" name="deleteCredencial" value="Eliminar Credencial" onclick="deleteC()">
+            <a href="../manager_index.html"><input type="button" class="buttons dark" value="Volver"></a>
+        </div>
+        <div class="form manager" id="newC_div" style="display:none">
+            <h1 style="font-size:36px;">Nueva Credencial</h1>
+            <form>
+                <input class="controls" type="text" name="credencialN" id="credencialN" placeholder="Nueva Credenciales" required>
+                <input class="controls" type="password" name="passwordN" id="passwordN" placeholder="Nueva Contraseña" required>
+                <input class="buttons" type="submit" value="Crear">
+            </form>
+            <input type="button" class="buttons dark"value="Volver" onclick="indexC()">
+        </div>
+        <div class="form manager" id="modifyC_div" style="display:none">
+            <h1 style="font-size:36px;">Modificar Credencial</h1>
+            <h7>(Lista de credenciales para seleccionar una)</h7>
+            <input type="button" class="buttons dark"value="Volver" onclick="indexC()">
+        </div>
+        <div class="form manager" id="deleteC_div" style="display:none">
+            <h1 style="font-size:36px;">Eliminar Credencial</h1>
+            <h7>(Lista de credenciales para seleccionar una o varias con tickeo)</h7>
+            <input type="button" class="buttons dark"value="Volver" onclick="indexC()">
+        </div>
+    </div>
+    <footer class="footer">
+        <h5>
+            <b style="font-size:20px;">Museo Argentino de Ciencias Naturales "Bernardino Rivadavia"</b>
+        <br>
+            Av. Angel Gallardo 470 - C1405DJR - Buenos Aires - Argentina.
+        <br>
+            Tel/Fax.: (5411) 4982-6595 / 8370 / 8797 / 4791 / 6670 / 1561 / 9410. (5411) 4981-9365 / 9282.
+        </h5>  
+    </footer>
+</body>
+</html>
