@@ -14,7 +14,7 @@
 - Hacer el resto de tablas ❌
 ---------------------
 ### DB:
-- Arreglar Auto-Increment ❌
+- Solucionar Auto-Increment ❌
 ---------------------
 ### Generales:
 - Modificar la Documentación para que aplique al proyecto actual (Modificar Diagramas si es necesario, agregar Portada, y modificar descripciones. Borrar Justificaciones) ❌
