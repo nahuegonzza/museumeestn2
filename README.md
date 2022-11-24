@@ -5,8 +5,8 @@
 ### SPA:
 - Aplicar Normas ARIA ❌
 - Solucionar repetición de Pantallas (Index y Mapa) ✅
-- Finalizar lo pendiente en la pestaña de Manager ⌚
-- Convertir las Cards a que utilicen objetos, para de esa manera ser mucho mas adaptable al archivo .json otorgado por la API ❌
+- Finalizar lo pendiente en la pestaña de Manager ❌
+- Convertir las Cards a que utilicen objetos, para de esa manera ser mucho mas adaptable al archivo .json otorgado por la API ⌚
 ---------------------
 ### API:
 - Arreglar PUT ❌
