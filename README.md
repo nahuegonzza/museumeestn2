@@ -14,6 +14,7 @@
 - Hacer el resto de tablas ❌
 ---------------------
 ### DB:
+- Rehacer DB
 - Solucionar Auto-Increment ❌
 ---------------------
 ### Generales:
