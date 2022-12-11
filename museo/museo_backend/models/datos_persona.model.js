@@ -1,5 +1,6 @@
 const sql = require('../config/db.js')
-
+//ENT
+const tableName = 'datos_persona';
 
 class datos_personaModel {
     constructor(_nombre, _apellido, _dni){
@@ -12,7 +13,7 @@ class datos_personaModel {
     obtenerRegistros = (callback) => {
          sql.query("SELECT * FROM datos_persona", (err, data) => {
                 if(data.length){ console.log(`Registro Encontrado > ${JSON.stringify(data)}`) 
-                }else{   console.log(`No se encontró registro`)};
+                }else{   console.log(`No se encontraron registros en la tabla ${tableName}`)};
                 callback(err, data)
          })
     
@@ -28,7 +29,7 @@ class datos_personaModel {
     Bid = (id, callback) => {
         sql.query("SELECT * FROM datos_persona WHERE id_persona = ?", id, (err, data) => {
             if(data.length){ console.log(`Registro Encontrado > ${JSON.stringify(data)}`) 
-            }else{   console.log(`No se encontró registro`)};
+            }else{   console.log(`No se encontró el registro por ID ${id} en la tabla ${tableName}`)};
 
             callback(err, data)
      })
@@ -42,6 +43,14 @@ class datos_personaModel {
 
              callback(err, data)
         });
+    }
+
+    borrarRegistro = (id, callback) =>{
+        sql.query("DELETE FROM datos_persona WHERE id_persona = ?", id, (err, data) => {
+            if(data){console.log(`Registro Eliminado > ${JSON.stringify(data)}`)}
+            else{console.log(`No se encontró el registro por ID ${id} en la tabla ${tableName}`)}
+            callback(err, data)
+        })
     }
     
 }

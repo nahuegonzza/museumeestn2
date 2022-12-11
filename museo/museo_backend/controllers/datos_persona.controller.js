@@ -6,9 +6,13 @@ class datos_persona {
     async obtenerRegistros (req, res) {
         try {
             datos_personaModel.obtenerRegistros((err,_data) => {
-                if(err) helpers.error(res, err)
+                if(_data.length <= 0){ 
+                    
+                    helpers.error(res, err)
+                }else{
                 
-                helpers.success(res, _data);
+                    helpers.success(res, _data);
+                }
             })
            
           //  return helpers.success(res, data);
@@ -45,9 +49,12 @@ class datos_persona {
         try {
          //   console.log(param)
             datos_personaModel.Bid(param, (err, _data) => {
-                if(!_data.length) helpers.error(res, err)
-
-                helpers.success(res, _data);
+                if(_data.length <= 0){
+                    helpers.error(res, err)
+                
+                }else{
+                    helpers.success(res, _data);
+                }
             })
             //return helpers.success(res, employee);
         }
@@ -67,9 +74,13 @@ class datos_persona {
             }
 
             datos_personaModel.actualizarRegistro(param, bodyData, (err, _data) => {
-                if(!_data.length) helpers.error(res, err)
+                if(_data.length <= 0){
+                    helpers.error(res, err)
+                
+                }else{
 
-                helpers.success(res, _data);
+                    helpers.success(res, _data);
+                }
             })
            // return helpers.success(res, employee.toClient());
         }
@@ -77,71 +88,24 @@ class datos_persona {
 
         }
     }
-/*
+
     // DELETE /employee/:id
-    async delete (req, res, param) {
-        let employee;
-        try {
-            employee = await Employee.get({ _id: param }, { isManager: 1 });
-        }
-        catch (e) {
-            console.log(e);
-        }
-
-        if (!employee) {
-            return helpers.error(res, 'Entity not found', 404);
-        }
-
-        try {
-            let update, conditions;
-
-            // delete employee from project
-            try {
-                update = { $pull: { employeeIds: mongoose.Types.ObjectId(param) } };
-                await Project.update({}, update, {multi: true});
+    async borrarRegistro (req, res, param) {
+       try {
+         datos_personaModel.borrarRegistro(param, (err, _data) => {
+            if(_data.length <= 0){
+                helpers.error(res, err)
+            
+            }else{
+                helpers.success(res, _data);
             }
-            catch (e) {
-                console.log('Error in delete employee from project', e);
-            }
+        })
 
-            // delete managerId from project
-            try {
-                update = { $set: { managerId: null } };
-                await Project.update({managerId: mongoose.Types.ObjectId(param)}, update, {multi: true});
-            }
-            catch (e) {
-                console.log('Error in delete employee from project', e);
-            }
-
-            // delete peers
-            try {
-                update = { $pull: { peers: mongoose.Types.ObjectId(param) } };
-                await Employee.update({}, update, {multi: true});
-            }
-            catch (e) {
-                console.log('delete peers', e);
-            }
-
-            // set manager to null
-            try {
-                conditions = {managerId: mongoose.Types.ObjectId(param)};
-                update = { $set: { managerId: null } };
-                await Employee.update(conditions, update, {multi: true});
-            }
-            catch (e) {
-                console.log('set manager to null', e);
-            }
-
-            conditions = { _id: param };
-            await Employee.remove(conditions);
-
-            return helpers.success(res);
-        }
-        catch (error) {
-            return helpers.error(res, error);
-        }
+       } catch (error) {
+        
+       }
     }
-
+/*
     // Checks if a manager with given id exists
     async validateManager (managerId) {
         if (managerId === null) {

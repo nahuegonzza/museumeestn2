@@ -30,6 +30,11 @@ const routes = [
         method: 'PUT',
         path: /api\/datos_persona\/([0-9a-z]+)/,
         handler: datos_personaController.actualizarRegistro.bind(datos_personaController)
+    },
+    {
+        method: 'DELETE',
+        path: /api\/datos_persona\/([0-9a-z]+)/,
+        handler: datos_personaController.borrarRegistro.bind(datos_personaController)
     }
 ];
 
