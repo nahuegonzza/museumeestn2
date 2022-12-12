@@ -5,12 +5,16 @@
  */
 
 const {APIRouteHandler} = require('../config/config')
-const datos_personaController = require('../controllers/datos_persona.controller')
+const datos_personaController = require('../controllers/datos_persona.controller');
+const idiomaController = require('../controllers/idioma.controller');
+const datos_personaModel = require('../models/datos_persona.model');
 
 
 //const projectController = require('./controllers/ProjectController');
 
 const routes = [
+
+    //DATOS PERSONA
     {
         method: 'GET',
         path: `${APIRouteHandler}/datos_persona`,
@@ -35,6 +39,33 @@ const routes = [
         method: 'DELETE',
         path: /api\/datos_persona\/([0-9a-z]+)/,
         handler: datos_personaController.borrarRegistro.bind(datos_personaController)
+    },
+
+    //IDIOMA
+    {
+        method: 'GET',
+        path: `${APIRouteHandler}/idioma`,
+        handler: idiomaController.obtenerRegistros.bind(datos_personaModel)
+    },
+    {
+        method: 'POST',
+        path: `${APIRouteHandler}/idioma`,
+        handler: idiomaController.crear.bind(datos_personaModel)
+    },
+    {
+        method: 'GET',
+        path: /api\/idioma\/([0-9a-z]+)/,
+        handler: idiomaController.Bid.bind(datos_personaModel)
+    },
+    {
+        method: 'PUT',
+        path: /api\/idioma\/([0-9a-z]+)/,
+        handler: idiomaController.actualizarRegistro.bind(datos_personaModel)
+    },
+    {
+        method: 'DELETE',
+        path: /api\/idioma\/([0-9a-z]+)/,
+        handler: idiomaController.borrarRegistro.bind(datos_personaModel)
     }
 ];
 
