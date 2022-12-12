@@ -9,8 +9,8 @@
 - Convertir las Cards a que utilicen objetos, para de esa manera ser mucho mas adaptable al archivo .json otorgado por la API ⌚✅
 ---------------------
 ### API:
-- Arreglar PUT ❌
-- Hacer Delete ❌
+- Arreglar PUT ✅
+- Hacer Delete ✅
 - Hacer el resto de tablas ❌
 ---------------------
 ### DB:
