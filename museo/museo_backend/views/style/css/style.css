@@ -35,9 +35,20 @@ h7 {
     margin-right: 3%;
     margin-top: 1%;
     color: rgb(255, 255, 255);
-    background-color: rgba(29, 29, 29, 0.5) ;
+    /* background-color: rgba(29, 29, 29, 0.5); */
+    background-color: rgba(35, 35, 35, 1);
     cursor:default;
     border-radius: 6px;
+}
+
+.map{
+    width: 95%;
+    height: 95%;
+    display: block;
+    /* background-color: rgba(29, 29, 29, 0.5); */
+    background-color: rgba(35, 35, 35, 1);
+    border-radius: 8px;
+    cursor:pointer;
 }
 
 /* ----Style Manager---- */
@@ -116,22 +127,13 @@ h7 {
     cursor: pointer;
 }
 
-.map{
-    width: 95%;
-    height: 95%;
-    display: block;
-    background-color: rgba(35, 35, 35, 0.5) ;
-    border-radius: 8px;
-    cursor:pointer;
-}
-
 .mapB{
     width: 90%;
     height: 90%;
     display: block;
     margin-left: 5%;
     margin-right: 5%;
-    background-color: rgba(15, 15, 15, 0.8) ;
+    background-color: rgba(15, 15, 15, 1) ;
     border-radius: 50px;
     cursor:default;
 }
@@ -190,6 +192,20 @@ h7 {
 
     margin: 16px;
     font-weight:bold;
+}
+
+.SpeechBtn {
+    width: 95%;
+    background: #1e1e1eb9;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.SpeechBtn:hover {
+    background: #ffffffb9;
 }
 
 .buttons:hover {

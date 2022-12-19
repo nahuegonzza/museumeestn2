@@ -26,13 +26,16 @@ class M_index{
                     "Gestionar Turnos"
                 ]}
             ]},
-            {type: "a", props:{id:"Credenciales", onclick: ()=> {this.Conectar("../modules/Manager/M_credenciales.js", "M_credenciales", "Main")}}, children: [
+            {type: "a", props:{id:"Credenciales", onclick: ()=> {this.deleter(), this.Conectar("../modules/Manager/M_credenciales.js", "M_credenciales", "Main")}}, children: [
                 {type:"h1", props:{class:"options"}, children: [
                     "Administrar Credenciales"
                 ]}
             ]}
         ]}
     ]
+    deleter = ()=>{
+        this.Conectar("../modules/deleter.js", "deleter", "Header")
+    }
     Conectar = async (url, id, dir)=> {
         const {MyBody} = await import("../../scripts/masterTemplate.js")
         const MyBody1 = new MyBody();

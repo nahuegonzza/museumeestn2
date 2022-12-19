@@ -15,9 +15,19 @@ class iniciarSesion{
                 {type: "input", props:{class:"controls", type:"text", name:"credencial", id:"credencial", placeholder:"Credenciales"}},
                 {type: "input", props:{class:"controls", type:"password", name:"password", id:"password", placeholder:"Contraseña"}},
                 {type: "input", props:{class:"buttons", type:"submit", value:"Iniciar Sesion"}},
+                {type: "input", props:{class:"buttons", type:"button", value:"Manager", onclick: ()=> { this.deleter(), this.Conectar("../modules/Manager/M_index.js", "M_index", "Main") }}},
             ]}
         ]}
     ]
+    deleter = () =>{
+        this.Conectar("../modules/deleter.js", "deleter", "Main")
+    }
+
+    Conectar = async (url, id, dir)=> {
+        const {MyBody} = await import("../scripts/masterTemplate.js")
+        const MyBody1 = new MyBody();
+        MyBody1.Navegando(url, id, dir);
+    }
 }
 
 export {iniciarSesion};

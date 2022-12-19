@@ -17,6 +17,7 @@ class header{
             { type: "li", props:{onclick: ()=> { this.deleter(), this.Conectar("../modules/historia.js", "historia", "Main") }}, children: ["Historia del Museo"]},
             { type: "li", props:{onclick: ()=> { this.deleter(), this.Conectar("../modules/turn.js", "turn", "Main") }}, children: ["Solicitar Turno"]},
             { type: "li", props:{onclick: ()=> { this.deleter(), this.Conectar("../modules/iniciarSesion.js", "iniciarSesion", "Main") }}, children: [{type: "b", children:["Iniciar Sesion"]}]},
+            { type: "li", props:{onclick: ()=> { this.deleter(), this.Conectar("../modules/persona.js", "persona", "Main") }}, children: [{type: "b", children:["Persona"]}]},
         ]}
     ]
     deleter = () =>{

@@ -46,22 +46,8 @@ class MyHeader extends domClass{
     constructor() {
         super();
         this.type = "header";
-        this.props = {id:"header", class:"navbar"};
-        this.children = [
-            {type: "a", children: [
-                {type: "img", props: {src:"style/img/logo2.png", class:"logo", alt:"Logo", onclick: ()=> {
-                    this.Navegando("../modules/Index.js", "Index", "Main")
-                }}}
-            ]},
-            { type: "ul", children: [
-                { type: "li", props:{onclick: ()=> { this.Navegando("../modules/mapa.js", "mapa", "Main") }}, children: ["Mapa"]},
-                { type: "li", props:{onclick: ()=> { this.Navegando("../modules/visita.js", "visita", "Main") }}, children: ["Exhibiciones"]},
-                { type: "li", props:{onclick: ()=> { this.Navegando("../modules/historia.js", "historia", "Main") }}, children: ["Historia del Museo"]},
-                { type: "li", props:{onclick: ()=> { this.Navegando("../modules/turn.js", "turn", "Main") }}, children: ["Solicitar Turno"]},
-                { type: "li", props:{onclick: ()=> { this.Navegando("../modules/iniciarSesion.js", "iniciarSesion", "Main") }}, children: [{type: "b", children:["Iniciar Sesion"]}]},
-                { type: "li", props:{onclick: ()=> { this.Navegando("../modules/Manager/M_index.js", "M_index", "Main") }}, children: ["Manager"]},
-            ]}
-        ];
+        this.props = {id:"Header", class:"navbar"};
+        this.children = [ ];
     }
 }
 
@@ -78,7 +64,7 @@ class MyFooter extends domClass{
     constructor() {
         super();
         this.type = "footer";
-        this.props = {id:"footer", class:"footer"},
+        this.props = {id:"Footer", class:"footer"},
         this.children = [ ];
     }
 }

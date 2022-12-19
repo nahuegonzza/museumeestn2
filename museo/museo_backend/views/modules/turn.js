@@ -35,6 +35,36 @@ class turn{
 
     _CargarDatos = ()=>{
         let Cards = [
+            {id:"Select", title:"Select", info:[]}
+        ];
+        let turnos = [
+            {
+                nro: "1",
+                lang: "Español",
+                datetime: "191220220930",
+            },
+            {
+                nro: "2",
+                lang: "Ingles",
+                datetime: "211220220830",
+            },
+            {
+                nro: "3",
+                lang: "Frances",
+                datetime: "241220221100",
+            },
+        ]
+
+
+    //const turnos= await fetch(endpoint)
+    turnos.map(turno => { 
+        Cards[0].info.push(
+            {nro:turno.nro, lang:turno.lang, datetime:turno.datetime}
+        )
+    })
+        
+        /*
+        let Cards = [
             {id:"Select", title:"Select",
                 info: [
                     {nro:"1", lang:"Español", datetime: "191220220930"}, //19/12/2022 - 09:30
@@ -43,8 +73,9 @@ class turn{
                 ]
             },
         ];
+        */
         Cards.forEach(card =>{
-            const CardI = new MyCard({type:"select", id: card.id}, card);
+            const CardI = new MyCard({type:"select", id: card.id, required:"required"}, card);
             this.children[1].children[0].children[7].children.push(CardI)
         })
     }

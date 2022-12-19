@@ -12,18 +12,22 @@ class Index{
                     ]}
                 ]},
                 {type: "div", props:{class:"mainTextDiv"}, children:[
-                    {type: "h1", children: [
-                        {type: "u", children:["Políticas"]}
-                    ]},
+                    {type: "h1", children: [ {type: "u", children:["Políticas"]} ]},
                     {type: "h2", children:[" - Coleccionar e Investigar."]},
                     {type: "h2", children:[" - Conservar, exhibir y custodiar del patrimonio."]},
                     {type: "h2", children:[" - Divulgar la ciencia, entendida como la interpretación de la información científica para transmitirla a los distintos tipos de público posibles."]},
                     {type: "h2", children:[" - Que el público construya a través de su experiencia previa y la visita al museo su propio conocimiento. Donde el visitante pueda asumir un rol activo, participando en todas las ofertas educativas, involucrando su dimensión emocional y construyendo su propio conocimiento."]},
-                    {type: "h2", children:[" - Complementar la educación formal (visitas articuladas a la currícula escolar)."]}
+                    {type: "h2", children:[" - Complementar la educación formal (visitas articuladas a la currícula escolar)."]},
+                    {type: "button", props:{class:"buttons SpeechBtn", id:"SpeechBtn", onclick: ()=> {this.Hablar("Index")}}, children:["🔊"]}
                 ]}
             ]}
         ];
     }
+
+    Hablar =(place) =>{
+        speechSynthesis.speak(new SpeechSynthesisUtterance(document.getElementById(place).innerHTML));
+    }
+
     Conectar = async (url, id, dir)=> {
         const {MyBody} = await import("../scripts/masterTemplate.js")
         const MyBody1 = new MyBody();
